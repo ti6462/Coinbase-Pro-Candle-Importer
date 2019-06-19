@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import datetime
 import cbpro
 import time
@@ -226,8 +228,6 @@ def import_new():
     filename = "{} {} to {} {} {}.csv".format(product, df.index[0], df.index[-1], candle_sizer, interpolate_method)
     df.to_csv(filename, mode='w+')
     print(filename, "created successfully.")
-
-    return df
 
 
 if __name__ == "__main__":
