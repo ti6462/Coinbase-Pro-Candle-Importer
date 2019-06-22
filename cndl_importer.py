@@ -225,7 +225,8 @@ def import_new():
     else:
         df.sort_index(inplace=True)
 
-    filename = "{} {} to {} {} {}.csv".format(product, df.index[0], df.index[-1], candle_sizer, interpolate_method)
+    filename = "{} {} UTC to {} UTC - {} {}.csv".format(product, df.index[0].strftime("%Y-%m-%d %H%M"),
+                                                df.index[-1].strftime("%Y-%m-%d %H%M"), candle_sizer, interpolate_method)
     df.to_csv(filename, mode='w+')
     print(filename, "created successfully.")
 
